@@ -1,0 +1,218 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background: #151515;
+  color: #eee;
+  padding: 2em;
+  max-width: 960px;
+  margin: auto;
+  padding-bottom: 4.5em; /* место под footer */
+  box-sizing: border-box;
+  min-height: 100vh;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+  background: #1e1e1e;
+  padding: 0.8em 1.5em;
+  border-radius: 8px;
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #fff;
+  user-select: none;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5em;
+}
+
+nav ul li {
+  color: #ccc;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+nav ul li:hover {
+  color: #fff;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+input,
+textarea,
+pre {
+  width: 100%;
+  font-family: monospace;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  padding: 1em;
+  background: #1e1e1e;
+  color: #eee;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  resize: vertical;
+}
+
+button {
+  margin-top: 0.5em;
+  margin-right: 1em;
+  padding: 0.5em 1em;
+  font-size: 14px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #eee;
+  cursor: pointer;
+  border-radius: 5px;
+  user-select: none;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  background: #444;
+  border-color: #666;
+}
+
+pre {
+  white-space: pre-wrap;
+  max-height: 400px;
+  overflow-y: auto;
+  background: #1a1a1a;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid #333;
+  margin-top: 1em;
+}
+
+#error-log {
+  color: #ff6b6b;
+  font-weight: bold;
+  white-space: pre-wrap;
+  margin-top: 0.5em;
+}
+
+/* Новый блок с кнопками после генерации */
+#action-buttons {
+  display: none; /* Скрываем по умолчанию */
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+/* FAQ стили */
+section.faq {
+  background: #1f1f1f;
+  padding: 1.5em 1.5em 1.2em 1.5em;
+  border-radius: 8px;
+  margin-top: 2em;
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.6em;
+  user-select: text; /* текст можно выделять */
+}
+
+section.faq h2 {
+  font-size: 1.4em;
+  margin: 0 0 0.6em 0;
+  color: #fff;
+  line-height: 1.2;
+  cursor: pointer;
+  user-select: none; /* заголовок нельзя выделять */
+  outline: none;
+}
+
+#faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+#faq-content.expanded {
+  max-height: 1000px; /* достаточно, чтобы показать весь текст */
+}
+
+#faq-content p {
+  margin: 0.6em 0;
+  user-select: text;
+}
+
+.faq-block {
+  margin-bottom: 1.2em;
+  padding-left: 1em;
+  border-left: 3px solid #444;
+}
+
+.faq-block h3 {
+  margin: 0 0 0.4em;
+  font-size: 1.1em;
+  color: #fff;
+}
+
+/* Уведомление */
+#notify {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2a2a2a;
+  color: #eee;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  user-select: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  z-index: 9999;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#notify.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 90%;
+  color: #eee;
+  user-select: text;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #2a2a2a;
+  color: #ccc;
+  text-align: center;
+  padding: 0.8em 0;
+  font-size: 14px;
+  user-select: none;
+  box-sizing: border-box;
+  border-top: 1px solid #444;
+  z-index: 1000;
+}
